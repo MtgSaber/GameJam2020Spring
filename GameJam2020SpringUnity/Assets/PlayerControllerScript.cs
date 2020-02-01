@@ -23,7 +23,7 @@ public class PlayerControllerScript : MonoBehaviour
     private bool future;
     private bool canShift;
     private bool gigawatts;
-    
+    private int currentRoom;
 
     
     // Start is called before the first frame update
@@ -37,6 +37,7 @@ public class PlayerControllerScript : MonoBehaviour
         rb = this.gameObject.GetComponentInChildren<Rigidbody2D>();
         feet = this.gameObject.GetComponentInChildren<FootCheckScript>();
         this.seedExists = false;
+        currentRoom = 0;
     }
 
     // Update is called once per frame
@@ -126,6 +127,15 @@ public class PlayerControllerScript : MonoBehaviour
         return future;
     }
 
+    public int GetRoom()
+    {
+        return currentRoom;
+    }
+
+    public void SetRoom(int num)
+    {
+        currentRoom = num;
+    }
     
     
 }
