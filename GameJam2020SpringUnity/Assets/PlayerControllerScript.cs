@@ -18,6 +18,9 @@ public class PlayerControllerScript : MonoBehaviour
     private bool future;
     bool canShift;
     bool gigawatts;
+    public int direction;
+    private GameObject seedObj;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,10 @@ public class PlayerControllerScript : MonoBehaviour
 
         hMove = Input.GetAxis("Horizontal");
         movement = new Vector2(hMove, 0.0f) * this.hSpeed;
-
+        this.direction = Math.Sign(this.hMove);
+        
+        Vector3 pos = this.rb.position;
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             gigawatts = true;
@@ -53,7 +59,11 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) {
             this.movement.y = (this.grounded ? this.vSpeed : 0.0f);
         }
-        //apply movement
+
+        if (Input.GetKeyDown(KeyCode.Q) && this.seedObj != null) {
+            Instantiate(this.seedObj, pos + new Vector3(this.direction*.5f, 0, 0), Quaternion.identity);
+        }
+            //apply movement
         Move();
     }
 
