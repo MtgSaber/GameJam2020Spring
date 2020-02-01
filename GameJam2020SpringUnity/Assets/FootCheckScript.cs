@@ -18,7 +18,7 @@ public class FootCheckScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.collider.gameObject.tag == "Ground")|| (collision.collider.gameObject.tag == "Yarn"))
+        if ((collision.collider.gameObject.tag == "Ground")|| (collision.collider.gameObject.tag == "Yarn")|| (collision.collider.gameObject.tag == "Mushroom"))
         {
             grounded = true;
             //Debug.Log(collision.collider.tag);
@@ -26,7 +26,7 @@ public class FootCheckScript : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if ((collision.collider.gameObject.tag == "Ground")||(collision.collider.gameObject.tag == "Yarn"))
+        if ((collision.collider.gameObject.tag == "Ground")||(collision.collider.gameObject.tag == "Yarn")||(collision.collider.gameObject.tag == "Mushroom"))
         {
             grounded = false;
             //Debug.Log(collision.collider.tag);
