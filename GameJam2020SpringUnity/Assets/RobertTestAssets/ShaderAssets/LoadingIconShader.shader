@@ -1,7 +1,8 @@
 ﻿Shader "Unlit/LoadingIconShader" {
     Properties {
-	    _PrimaryTex ("Main Tex", 2D) = "black" {}
-        _InputTexture ("Input Texture", 2D) = "black" {}
+		_PrimaryTex ("Main Tex", 2D) = "black" {}
+	    _VisualInput ("VisualInput", 2D) = "black" {}
+        _ShaderInput ("ShaderInput", 2D) = "black" {}
 		
 		_VOffset ("VOffset", Range (0.0, 1.0)) = 1.0
 		_HOffset ("HOffset", Range (0.0, 1.0)) = 0.0
@@ -47,16 +48,18 @@
                 o.uv = v.uv;
                 return o;
             }
-
-            sampler2D _PrimaryTex;
-            sampler2D _InputTexture;
+			
+			
+			sampler2D _PrimaryTex;
+            sampler2D _VisualInput;
+            sampler2D _ShaderInput;
 			Float _VOffset;
 			Float _HOffset;
             fixed4 frag (v2f i) : SV_Target {
-				float x = _HOffset + tex2D(_InputTexture,i.uv).g;
-				float y = _VOffset + tex2D(_InputTexture,i.uv).r;
+				float x = _HOffset + tex2D(_ShaderInput,i.uv).g;
+				float y = _VOffset + tex2D(_ShaderInput,i.uv).r;
 
-				return tex2D(_PrimaryTex,float2(x,y));
+				return tex2D(_VisualInput,float2(x,y)) *  tex2D(_PrimaryTex,i.uv).a;
 			
 			}
 			ENDCG
