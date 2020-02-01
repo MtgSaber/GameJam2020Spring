@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerControllerScript : MonoBehaviour
 {
@@ -9,16 +11,15 @@ public class PlayerControllerScript : MonoBehaviour
     private Vector2 jumpVector;
     private bool canMove;
     private Rigidbody2D rb;
-    public float speed;
+    [FormerlySerializedAs("speed")] public float hSpeed;
+    public float vSpeed;
     private bool grounded;
-    private bool jumping;
     private FootCheckScript feet;
     // Start is called before the first frame update
     void Start()
     {
         canMove = true;
         grounded = false;
-        jumping = false;
         rb = this.gameObject.GetComponentInChildren<Rigidbody2D>();
         feet = this.gameObject.GetComponentInChildren<FootCheckScript>();
        
@@ -28,17 +29,12 @@ public class PlayerControllerScript : MonoBehaviour
     void Update()
     {
         hMove = Input.GetAxis("Horizontal");
-        movement = new Vector2(hMove, 0.0f) * speed;
+        movement = new Vector2(hMove, 0.0f) * this.hSpeed;
 
         grounded = feet.GetGrounded();
-        Debug.Log(grounded);
-        if (Input.GetKey(KeyCode.Space))
-        {
-            jumping = true;
-        }
-        else
-        {
-            jumping = false;
+        //Debug.Log(grounded);
+        if (Input.GetKey(KeyCode.Space)) {
+            this.movement.y = (this.grounded ? this.vSpeed : 0.0f);
         }
 
         Move();
@@ -48,17 +44,29 @@ public class PlayerControllerScript : MonoBehaviour
     {
         if (canMove)
         {
-            rb.AddForce(movement);
-            if (jumping && grounded)
-            {
-                Jump();
-            }
+            Vector2 velocity = this.rb.velocity;
+            float attemptedX = velocity.x + this.movement.x;
+            float attemptedY = velocity.y + this.movement.y;
+            
+            
+            Debug.Log(
+                "Movement: {"
+                + "movement: " + this.movement.ToString()
+                + ", velocity: " + velocity.ToString()
+                + ", projectedX: " + attemptedX
+                + ", projectedY: " + attemptedY
+                + ", grounded: " + this.grounded
+                + "}"
+            );
+            
+            
+            if (Math.Abs(attemptedX) <= Math.Abs(this.hSpeed))
+                velocity.x += this.movement.x;
+            if (Math.Abs(attemptedY) <= Math.Abs(this.vSpeed))
+                velocity.y += this.movement.y;
+
+            this.rb.velocity = velocity;
         }
-    }
-    void Jump()
-    {
-        jumpVector = new Vector2(0.0f, 100.0f);
-        rb.AddForce(jumpVector);
     }
 
     
