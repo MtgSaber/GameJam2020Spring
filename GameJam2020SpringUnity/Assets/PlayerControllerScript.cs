@@ -20,6 +20,7 @@ public class PlayerControllerScript : MonoBehaviour
     bool gigawatts;
     public int direction;
     public GameObject seedObj;
+    bool seedExists;
 
     
     // Start is called before the first frame update
