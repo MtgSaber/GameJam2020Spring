@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CameraRefScript : MonoBehaviour
 {
-    public int room;
-    bool future;
+    public bool future;
+    public Transform anchorPoint;
+    public bool alternateSize;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anchorPoint = this.transform;
     }
 
     // Update is called once per frame

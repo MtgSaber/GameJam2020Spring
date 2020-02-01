@@ -35,6 +35,7 @@ public class PlayerControllerScript : MonoBehaviour
         rb = this.gameObject.GetComponentInChildren<Rigidbody2D>();
         feet = this.gameObject.GetComponentInChildren<FootCheckScript>();
         this.seedExists = false;
+        currentRoom = 0;
     }
 
     // Update is called once per frame
