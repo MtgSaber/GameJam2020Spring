@@ -76,11 +76,16 @@ public class PlayerControllerScript : MonoBehaviour
                 + "}"
             );
             
-            
-            if (Math.Abs(attemptedX) <= Math.Abs(this.hSpeed))
-                velocity.x += this.movement.x;
-            if (Math.Abs(attemptedY) <= Math.Abs(this.vSpeed))
-                velocity.y += this.movement.y;
+            if (Math.Abs(velocity.x) < this.vSpeed || Math.Sign(this.movement.x) != Math.Sign(velocity.x))
+                if (Math.Abs(attemptedX) < this.hSpeed)
+                    velocity.x += this.movement.x;
+                else
+                    velocity.x = this.vSpeed * Math.Sign(this.movement.x);
+            if (Math.Abs(velocity.y) < this.vSpeed || Math.Sign(this.movement.y) != Math.Sign(velocity.y))
+                if (Math.Abs(attemptedY) < this.vSpeed)
+                    velocity.y += this.movement.y;
+                else
+                    velocity.y = this.vSpeed * Math.Sign(this.movement.y);
 
             this.rb.velocity = velocity;
         
