@@ -46,9 +46,10 @@ public class PlayerControllerScript : MonoBehaviour
 
         hMove = Input.GetAxis("Horizontal");
         movement = new Vector2(hMove, 0.0f) * this.hSpeed;
-        this.direction = Math.Sign(this.hMove);
+        if (this.hMove != 0)
+            this.direction = Math.Sign(this.hMove);
         
-        Vector3 pos = this.rb.position;
+        Vector2 pos = this.gameObject.transform.position;
         
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -68,8 +69,10 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q) && !this.seedExists) {
             //Debug.Log("pressed q");
-            Instantiate(this.seedObj, pos + new Vector3(this.direction*this.offsetX, 0, 0), Quaternion.identity);
+            Instantiate(this.seedObj, pos + new Vector2(this.direction*this.offsetX, .7f), Quaternion.identity);
+            this.seedObj.GetComponent<SeedMovement>().direction = this.direction;
             this.seedExists = true;
+            this.movement += new Vector2(this.hSpeed * -this.direction, 0);
         }
         
         //apply movement
