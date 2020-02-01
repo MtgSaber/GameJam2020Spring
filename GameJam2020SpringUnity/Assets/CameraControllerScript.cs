@@ -18,7 +18,7 @@ public class CameraControllerScript : MonoBehaviour
     void Update()
     {
         future = pcs.GetFuture();
-        Debug.Log("Future is " + future);
+        //Debug.Log("Future is " + future);
         if (future)
         {
             this.transform.position= new Vector3(0.0f,20.0f,-10.0f );

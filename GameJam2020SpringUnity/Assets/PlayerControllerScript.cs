@@ -66,7 +66,7 @@ public class PlayerControllerScript : MonoBehaviour
             float attemptedY = velocity.y + this.movement.y;
             
             
-            Debug.Log(
+            /*Debug.Log(
                 "Movement: {"
                 + "movement: " + this.movement.ToString()
                 + ", velocity: " + velocity.ToString()
@@ -74,7 +74,7 @@ public class PlayerControllerScript : MonoBehaviour
                 + ", projectedY: " + attemptedY
                 + ", grounded: " + this.grounded
                 + "}"
-            );
+            );*/
             
             if (Math.Abs(velocity.x) < this.vSpeed || Math.Sign(this.movement.x) != Math.Sign(velocity.x))
                 if (Math.Abs(attemptedX) < this.hSpeed)
