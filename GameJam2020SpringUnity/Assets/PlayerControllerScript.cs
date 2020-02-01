@@ -19,7 +19,9 @@ public class PlayerControllerScript : MonoBehaviour
     bool canShift;
     bool gigawatts;
     public int direction;
-    private GameObject seedObj;
+    public GameObject seedObj;
+    bool seedExists;
+
     
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,7 @@ public class PlayerControllerScript : MonoBehaviour
         gigawatts = false;
         rb = this.gameObject.GetComponentInChildren<Rigidbody2D>();
         feet = this.gameObject.GetComponentInChildren<FootCheckScript>();
-       
+        this.seedExists = false;
     }
 
     // Update is called once per frame
@@ -60,7 +62,7 @@ public class PlayerControllerScript : MonoBehaviour
             this.movement.y = (this.grounded ? this.vSpeed : 0.0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && this.seedObj != null) {
+        if (Input.GetKeyDown(KeyCode.Q) && !this.seedExists) {
             Debug.Log("pressed q");
             Instantiate(this.seedObj, pos + new Vector3(this.direction*.5f, 0, 0), Quaternion.identity);
         }
@@ -76,7 +78,6 @@ public class PlayerControllerScript : MonoBehaviour
             Vector2 velocity = this.rb.velocity;
             float attemptedX = velocity.x + this.movement.x;
             float attemptedY = velocity.y + this.movement.y;
-            
             
             if (Math.Abs(velocity.x) < this.vSpeed || Math.Sign(this.movement.x) != Math.Sign(velocity.x))
                 if (Math.Abs(attemptedX) < this.hSpeed)
