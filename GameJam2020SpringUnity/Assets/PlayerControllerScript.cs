@@ -61,9 +61,11 @@ public class PlayerControllerScript : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && this.seedObj != null) {
+            Debug.Log("pressed q");
             Instantiate(this.seedObj, pos + new Vector3(this.direction*.5f, 0, 0), Quaternion.identity);
         }
-            //apply movement
+        
+        //apply movement
         Move();
     }
 
@@ -75,7 +77,7 @@ public class PlayerControllerScript : MonoBehaviour
             float attemptedX = velocity.x + this.movement.x;
             float attemptedY = velocity.y + this.movement.y;
             
-            
+            /*
             Debug.Log(
                 "Movement: {"
                 + "movement: " + this.movement.ToString()
@@ -85,6 +87,7 @@ public class PlayerControllerScript : MonoBehaviour
                 + ", grounded: " + this.grounded
                 + "}"
             );
+            */
             
             if (Math.Abs(velocity.x) < this.vSpeed || Math.Sign(this.movement.x) != Math.Sign(velocity.x))
                 if (Math.Abs(attemptedX) < this.hSpeed)
