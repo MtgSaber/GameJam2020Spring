@@ -6,21 +6,23 @@ using UnityEngine.Serialization;
 
 public class PlayerControllerScript : MonoBehaviour
 {
+    public float vSpeed;
+    public int        direction;
+    public GameObject seedObj;
+    public bool       seedExists;
+    public float      offsetX;
+    [FormerlySerializedAs("speed")] public float hSpeed;
+    
     private float hMove;
     private Vector2 movement;
     private Vector2 jumpVector;
     private bool canMove;
     private Rigidbody2D rb;
-    [FormerlySerializedAs("speed")] public float hSpeed;
-    public float vSpeed;
     private bool grounded;
     private FootCheckScript feet;
     private bool future;
-    bool canShift;
-    bool gigawatts;
-    public int direction;
-    public GameObject seedObj;
-    bool seedExists;
+    private bool canShift;
+    private bool gigawatts;
     private int currentRoom;
 
     
@@ -65,8 +67,9 @@ public class PlayerControllerScript : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && !this.seedExists) {
-            Debug.Log("pressed q");
-            Instantiate(this.seedObj, pos + new Vector3(this.direction*.5f, 0, 0), Quaternion.identity);
+            //Debug.Log("pressed q");
+            Instantiate(this.seedObj, pos + new Vector3(this.direction*this.offsetX, 0, 0), Quaternion.identity);
+            this.seedExists = true;
         }
         
         //apply movement
@@ -93,8 +96,6 @@ public class PlayerControllerScript : MonoBehaviour
                     velocity.y = this.vSpeed * Math.Sign(this.movement.y);
 
             this.rb.velocity = velocity;
-        
-            
 
             if (canShift&&gigawatts)
             {
