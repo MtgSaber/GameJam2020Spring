@@ -15,11 +15,17 @@ public class PlayerControllerScript : MonoBehaviour
     public float vSpeed;
     private bool grounded;
     private FootCheckScript feet;
+    private bool future;
+    bool canShift;
+    bool gigawatts;
     // Start is called before the first frame update
     void Start()
     {
         canMove = true;
         grounded = false;
+        future = false;
+        canShift = true;
+        gigawatts = false;
         rb = this.gameObject.GetComponentInChildren<Rigidbody2D>();
         feet = this.gameObject.GetComponentInChildren<FootCheckScript>();
        
@@ -28,15 +34,26 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         hMove = Input.GetAxis("Horizontal");
         movement = new Vector2(hMove, 0.0f) * this.hSpeed;
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            gigawatts = true;
+        }
+        else
+        {
+            gigawatts = false;
+        }
+
+        //jumping control block
         grounded = feet.GetGrounded();
         //Debug.Log(grounded);
         if (Input.GetKey(KeyCode.Space)) {
             this.movement.y = (this.grounded ? this.vSpeed : 0.0f);
         }
-
+        //apply movement
         Move();
     }
 
@@ -66,6 +83,31 @@ public class PlayerControllerScript : MonoBehaviour
                 velocity.y += this.movement.y;
 
             this.rb.velocity = velocity;
+        
+            
+
+            if (canShift&&gigawatts)
+            {
+                QuantumLeap();
+            }
+        }
+    }
+    void Jump()
+    {
+        jumpVector = new Vector2(0.0f, 100.0f);
+        rb.AddForce(jumpVector);
+    }
+    void QuantumLeap()
+    {
+        if (!future)
+        {
+            this.gameObject.transform.Translate(0.0f, 20.0f, 0.0f);
+            future = true;
+        }
+        else
+        {
+            this.gameObject.transform.Translate(0.0f, -20.0f, 0.0f);
+            future = false;
         }
     }
 
