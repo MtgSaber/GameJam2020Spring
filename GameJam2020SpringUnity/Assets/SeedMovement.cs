@@ -28,13 +28,17 @@ public class SeedMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (t > 60 * 10) {
+            this.playerScript.seedExists = false;
+            Destroy(gameObject);
+        }
         if (this.type == 1)
             MovementType1();
+        t++;
     }
 
     private void MovementType1() {
         this.rb.velocity = 100 * (MovementType1Func(this.t) - MovementType1Func(t-1));
-        this.t++;
     }
 
     private Vector2 MovementType1Func(int t) {

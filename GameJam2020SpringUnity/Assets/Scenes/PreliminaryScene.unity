@@ -1355,12 +1355,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7047d33f72d6e724a8bc5c895fdc9dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vSpeed: 6
+  vSpeed: 3
   direction: 0
   seedObj: {fileID: 1018040662824809845, guid: adf3e277a95afd143b6f252589f6573c, type: 3}
-  seedExists: 1
-  offsetX: 5
-  hSpeed: 6
+  seedExists: 0
+  offsetX: 0.5
+  hSpeed: 3
 --- !u!50 &1932076282
 Rigidbody2D:
   serializedVersion: 4
