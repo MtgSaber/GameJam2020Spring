@@ -19,7 +19,7 @@ public class PlayerControllerScript : MonoBehaviour
     bool canShift;
     bool gigawatts;
     public int direction;
-    private GameObject seedObj;
+    public GameObject seedObj;
     
     // Start is called before the first frame update
     void Start()

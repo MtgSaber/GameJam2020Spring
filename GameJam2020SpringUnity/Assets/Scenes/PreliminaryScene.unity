@@ -1111,6 +1111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hSpeed: 6
   vSpeed: 6
+  direction: 0
+  seedObj: {fileID: 1018040662824809845, guid: adf3e277a95afd143b6f252589f6573c, type: 3}
 --- !u!50 &1932076282
 Rigidbody2D:
   serializedVersion: 4
