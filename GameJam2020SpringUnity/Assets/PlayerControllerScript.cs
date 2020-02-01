@@ -21,6 +21,7 @@ public class PlayerControllerScript : MonoBehaviour
     public int direction;
     public GameObject seedObj;
     bool seedExists;
+    private int currentRoom;
 
     
     // Start is called before the first frame update
@@ -124,6 +125,15 @@ public class PlayerControllerScript : MonoBehaviour
         return future;
     }
 
+    public int GetRoom()
+    {
+        return currentRoom;
+    }
+
+    public void SetRoom(int num)
+    {
+        currentRoom = num;
+    }
     
     
 }
