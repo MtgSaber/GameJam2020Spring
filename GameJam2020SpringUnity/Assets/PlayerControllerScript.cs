@@ -111,6 +111,11 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
+    public bool GetFuture()
+    {
+        return future;
+    }
+
     
     
 }
