@@ -150,9 +150,14 @@ using UnityEngine.Serialization;
             yarnRB.position = this.lastStarSpot + new Vector3(1 + this.yarnOffset, this.future ? PlantManagerScript.FUTURE_OFFSET : 0, 0);
             yarnRB.velocity = Vector3.zero;
             yarnRB.angularVelocity = 0;
+
             beepAndBoop[1].clip = sounds[0];
             beepAndBoop[1].Play();
-    }
+        future = false;
+        }
+
+            
+        }
 
         void Move()
         {
@@ -244,4 +249,3 @@ using UnityEngine.Serialization;
             beepAndBoop[1].Play();
         }
     }
-}
