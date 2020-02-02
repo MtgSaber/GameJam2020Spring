@@ -8,6 +8,7 @@ TagManager:
   - Yarn
   - Mushroom
   - Dirt
+  - Star
   layers:
   - Default
   - TransparentFX
