@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeedMovement : MonoBehaviour {
+public class SeedScript : MonoBehaviour {
     public int type;
 
     private PlantManagerScript plantManagerScript;
@@ -19,6 +19,7 @@ public class SeedMovement : MonoBehaviour {
         rb = this.gameObject.GetComponentInChildren<Rigidbody2D>();
         this.initialPosition = this.rb.position;
         this.playerScript = GameObject.Find("Player").gameObject.GetComponent<PlayerControllerScript>();
+        this.plantManagerScript = GameObject.Find("PlantManager").GetComponent<PlantManagerScript>();
         this.direction = this.playerScript.direction;
         if (this.type != 1) {
             this.rb.gravityScale = 1f;
@@ -48,18 +49,7 @@ public class SeedMovement : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("Dirt")) {
-            switch (this.type) {
-                case 0:
-                    Instantiate(this.plantManagerScript.tree, this.rb.position + new Vector2(0, 16.4f), Quaternion.identity);
-                    break;
-                case 1:
-                    Instantiate(this.plantManagerScript.mushroom, this.rb.position + new Vector2(0, 16.4f), Quaternion.identity);
-                    break;
-                case 2:
-                    Instantiate(this.plantManagerScript.vine, this.rb.position + new Vector2(0, 16.4f), Quaternion.identity);
-                    this.plantManagerScript.vine.transform.transform.Rotate(0.0f, 0.0f, 90.0f);
-                    break;
-            }
+            
         }
         
         if (!other.gameObject.tag.Equals("Player")) {
