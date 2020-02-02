@@ -37,7 +37,20 @@ public class CameraControllerScript : MonoBehaviour
         {
             destination = futureAnchors[currentRoom].transform;
         }
-        MoveToAnchor(currentRoom);
+        float d = destination.transform.position.x - this.transform.position.x;
+        if (pcs.CanMove())
+        {
+            MoveToAnchor(currentRoom);
+        }
+        else
+        {
+            if(d > .01)
+            {
+
+                this.transform.Translate(8 * Time.deltaTime, 0.0f, 0.0f, Space.World);
+            }
+        }
+        
     }
 
     void MoveToAnchor(int roomNumber)

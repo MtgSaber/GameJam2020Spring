@@ -20,7 +20,7 @@ public class PlayerControllerScript : MonoBehaviour
     private float hMove;
     private Vector2 movement;
     private Vector2 jumpVector;
-    private bool canMove;
+    public bool canMove;
     private Rigidbody2D rb;
     private bool grounded;
     private FootCheckScript feet;
@@ -157,5 +157,8 @@ public class PlayerControllerScript : MonoBehaviour
         currentRoom = num;
     }
     
-    
+    public bool CanMove()
+    {
+        return canMove;
+    }
 }
