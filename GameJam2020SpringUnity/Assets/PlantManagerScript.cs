@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlantManagerScript : MonoBehaviour {
-    // Add more attributes as needed. One per potential plant instance.
+    public const float FUTURE_OFFSET = 16.6f;
+    
     public GameObject mushroom;
     public GameObject tree;
     public GameObject vine;
 
     private LinkedList<GameObject> plants;
-    private const float FUTURE_OFFSET = 16.6f;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +41,7 @@ public class PlantManagerScript : MonoBehaviour {
         }
     }
 
-    public void BitesZaDusto() {
+    public void BiteZaDusto() {
         foreach (var plant in this.plants) Destroy(plant);
     }
 }
