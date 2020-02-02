@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class SeedMovement : MonoBehaviour {
     public int type;
-    
-    private int direction;
+
+    private PlantManagerScript plantManagerScript;
     private PlayerControllerScript playerScript;
+    private int direction;
     private Rigidbody2D rb;
-    private GameObject self;
     private Vector2 initialPosition;
     private int t;
 
@@ -43,10 +43,24 @@ public class SeedMovement : MonoBehaviour {
     }
 
     private Vector2 MovementType1Func(int t) {
-        return new Vector2(-this.direction * .3f * (1/60.0f * t - 3) * (1/60.0f * t - 3)  + 5,.3f * (3 - 1/60.0f*t));
+        return new Vector2(-this.direction * .1f * (1/15.0f * t - 3) * (1/15.0f * t - 3)  + 5,.2f * (3 - 1/15.0f*t));
     }
 
     public void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag.Equals("Dirt")) {
+            switch (this.type) {
+                case 0:
+                    Instantiate(this.plantManagerScript.tree, this.rb.position + new Vector2(0, 20f), Quaternion.identity);
+                    break;
+                case 1:
+                    Instantiate(this.plantManagerScript.mushroom, this.rb.position + new Vector2(0, 20f), Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(this.plantManagerScript.vine, this.rb.position + new Vector2(0, 20f), Quaternion.identity);
+                    break;
+            }
+        }
+        
         if (!other.gameObject.tag.Equals("Player")) {
             this.playerScript.seedExists = false;
             Destroy(this.gameObject);
