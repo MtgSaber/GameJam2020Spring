@@ -1298,7 +1298,7 @@ PrefabInstance:
     - target: {fileID: 167200565170917549, guid: 8e00e6b19c056304f811852789175e9c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 167200565170917549, guid: 8e00e6b19c056304f811852789175e9c,
         type: 3}
@@ -2941,7 +2941,7 @@ GameObject:
   - component: {fileID: 487712919}
   m_Layer: 0
   m_Name: Block6_A (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4396,7 +4396,7 @@ GameObject:
   - component: {fileID: 834819039}
   m_Layer: 0
   m_Name: Background_B (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6016,7 +6016,7 @@ GameObject:
   - component: {fileID: 1187042139}
   m_Layer: 0
   m_Name: Block6_B (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7995,7 +7995,7 @@ GameObject:
   - component: {fileID: 1606286070}
   m_Layer: 0
   m_Name: Block6_A (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9211,7 +9211,7 @@ PrefabInstance:
     - target: {fileID: 167200565170917549, guid: 8e00e6b19c056304f811852789175e9c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 167200565170917549, guid: 8e00e6b19c056304f811852789175e9c,
         type: 3}
@@ -10348,7 +10348,7 @@ GameObject:
   - component: {fileID: 2021203920}
   m_Layer: 0
   m_Name: Block2_B (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10999,7 +10999,7 @@ GameObject:
   - component: {fileID: 2120461919}
   m_Layer: 0
   m_Name: Block1_B (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
