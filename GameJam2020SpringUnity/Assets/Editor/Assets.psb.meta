@@ -608,7 +608,7 @@ ScriptedImporter:
   textureActualHeight: 1024
   spritePackingTag: 
   resliceFromLayer: 0
-  characterMode: 1
+  characterMode: 0
   mosaicPSDLayers: []
   rigPSDLayers:
   - name: Paper
@@ -643,7 +643,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 118
     mosaicPosition: {x: 0, y: 0}
   - name: Plant2
@@ -720,7 +720,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 69
     mosaicPosition: {x: 0, y: 0}
   - name: Sappling
