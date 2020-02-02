@@ -8743,7 +8743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7047d33f72d6e724a8bc5c895fdc9dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yarnOffset: 0
   vSpeed: 10
   direction: 0
   seed1Obj: {fileID: 6270445960195176892, guid: 5470db0b2f17b9846b1791cc6e06e477,
