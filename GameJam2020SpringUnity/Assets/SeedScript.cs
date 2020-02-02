@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SeedScript : MonoBehaviour {
+    public const int TYPE_TREE = 0;
+    public const int TYPE_SHROOM = 1;
+    public const int TYPE_VINE = 2;
+    
     public int type;
 
     private PlantManagerScript plantManagerScript;
@@ -21,7 +25,7 @@ public class SeedScript : MonoBehaviour {
         this.playerScript = GameObject.Find("Player").gameObject.GetComponent<PlayerControllerScript>();
         this.plantManagerScript = GameObject.Find("PlantManager").GetComponent<PlantManagerScript>();
         this.direction = this.playerScript.direction;
-        if (this.type != 1) {
+        if (this.type != TYPE_VINE) {
             this.rb.gravityScale = 1f;
             this.rb.velocity = new Vector2(this.direction, 0);
         }
@@ -34,7 +38,7 @@ public class SeedScript : MonoBehaviour {
             this.playerScript.seedExists = false;
             Destroy(gameObject);
         }
-        if (this.type == 1)
+        if (this.type == TYPE_VINE)
             MovementType1();
     }
 
