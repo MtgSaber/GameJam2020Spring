@@ -49,7 +49,7 @@ public class SeedScript : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("Dirt")) {
-            
+            this.plantManagerScript.CreatePlant(this.type, this.rb.position);
         }
         
         if (!other.gameObject.tag.Equals("Player")) {

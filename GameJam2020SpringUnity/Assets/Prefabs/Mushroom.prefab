@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9165690679752088550}
   m_Layer: 0
   m_Name: Mushroom
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8204280548094216466, guid: b46cab95744f74b429cb82f8bbd2ce27,
+  m_Sprite: {fileID: -8239791782415848024, guid: b46cab95744f74b429cb82f8bbd2ce27,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
