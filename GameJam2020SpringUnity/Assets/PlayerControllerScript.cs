@@ -138,6 +138,7 @@ using UnityEngine.Serialization;
             yarnRB.position = this.lastStarSpot + new Vector3(1 + this.yarnOffset, this.future ? PlantManagerScript.FUTURE_OFFSET : 0, 0);
             yarnRB.velocity = Vector3.zero;
             yarnRB.angularVelocity = 0;
+            this.future = false;
         }
 
         void Move()
