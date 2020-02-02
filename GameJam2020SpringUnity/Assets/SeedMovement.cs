@@ -50,13 +50,14 @@ public class SeedMovement : MonoBehaviour {
         if (other.gameObject.tag.Equals("Dirt")) {
             switch (this.type) {
                 case 0:
-                    Instantiate(this.plantManagerScript.tree, this.rb.position + new Vector2(0, 20f), Quaternion.identity);
+                    Instantiate(this.plantManagerScript.tree, this.rb.position + new Vector2(0, 16.4f), Quaternion.identity);
                     break;
                 case 1:
-                    Instantiate(this.plantManagerScript.mushroom, this.rb.position + new Vector2(0, 20f), Quaternion.identity);
+                    Instantiate(this.plantManagerScript.mushroom, this.rb.position + new Vector2(0, 16.4f), Quaternion.identity);
                     break;
                 case 2:
-                    Instantiate(this.plantManagerScript.vine, this.rb.position + new Vector2(0, 20f), Quaternion.identity);
+                    Instantiate(this.plantManagerScript.vine, this.rb.position + new Vector2(0, 16.4f), Quaternion.identity);
+                    this.plantManagerScript.vine.transform.transform.Rotate(0.0f, 0.0f, 90.0f);
                     break;
             }
         }
