@@ -8,7 +8,6 @@ public class PlayerControllerScript : MonoBehaviour
 {
     public float vSpeed;
     public int direction;
-
     [FormerlySerializedAs("seedObj")] public GameObject seed1Obj;
     public GameObject seed2Obj;
     public GameObject seed3Obj;
@@ -20,6 +19,7 @@ public class PlayerControllerScript : MonoBehaviour
     private float hMove;
     private Vector2 movement;
     private Vector2 jumpVector;
+    private Vector3 lastStarSpot;
     public bool canMove;
     private Rigidbody2D rb;
     private bool grounded;
@@ -33,6 +33,7 @@ public class PlayerControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lastStarSpot = this.gameObject.transform.position;
         canMove = true;
         grounded = false;
         future = false;
@@ -157,8 +158,24 @@ public class PlayerControllerScript : MonoBehaviour
         currentRoom = num;
     }
     
-    public bool CanMove()
+    public bool GetMove()
     {
         return canMove;
+    }
+
+    public void SetMove(bool val)
+    {
+        canMove = val;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Star")
+        {
+            SetMove(false);
+            currentRoom++;
+            lastStarSpot = collision.gameObject.transform.position;
+            Destroy(collision.gameObject);
+        }
     }
 }

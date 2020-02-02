@@ -13,11 +13,13 @@ public class CameraControllerScript : MonoBehaviour
     bool future;
     public int currentRoom;
     private Transform destination;
+    private int lastKnownRoom;
     // Start is called before the first frame update
     void Start()
     {
         future = false;
         currentRoom = 0;
+        lastKnownRoom = currentRoom;
         pcs = player.GetComponent<PlayerControllerScript>();
         pastAnchors = pastAnchorsContainer.GetComponentsInChildren<CameraRefScript>();
         futureAnchors = futureAnhorContainer.GetComponentsInChildren<CameraRefScript>();
@@ -28,28 +30,46 @@ public class CameraControllerScript : MonoBehaviour
     {
         future = pcs.GetFuture();
         currentRoom = pcs.GetRoom();
-        //Debug.Log("Future is " + future);
-        Debug.Log(pastAnchors[currentRoom].gameObject.transform);
         if (!future)
         {
             destination = pastAnchors[currentRoom].transform;
-        }else if (future)
+        }
+        else if (future)
         {
             destination = futureAnchors[currentRoom].transform;
         }
-        float d = destination.transform.position.x - this.transform.position.x;
-        if (pcs.CanMove())
+        if (pcs.canMove)
         {
             MoveToAnchor(currentRoom);
         }
-        else
+        if (lastKnownRoom != currentRoom)
         {
-            if(d > .01)
+            float d = destination.transform.position.x - this.transform.position.x;
+            if (pcs.GetMove())
             {
-
-                this.transform.Translate(8 * Time.deltaTime, 0.0f, 0.0f, Space.World);
+                
             }
+            else
+            {
+                if (d > .01)
+                {
+
+                    this.transform.Translate(8 * Time.deltaTime, 0.0f, 0.0f, Space.World);
+                }
+                else
+                {
+                    lastKnownRoom = currentRoom;
+                    pcs.SetMove(true);
+                }
+            }
+            
         }
+        //Debug.Log("Future is " + future);
+        //Debug.Log(pastAnchors[currentRoom].gameObject.transform);
+
+        
+
+        
         
     }
 
