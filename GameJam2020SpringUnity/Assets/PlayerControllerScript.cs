@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerControllerScript : MonoBehaviour
-{
+public class PlayerControllerScript : MonoBehaviour {
+    public float yarnOffset;
     public float vSpeed;
     public int direction;
     [FormerlySerializedAs("seedObj")] public GameObject seed1Obj;
@@ -71,9 +71,8 @@ public class PlayerControllerScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Y)) {
-            this.plantManagerScript.BitesZaDusto();
-            // TODO: add more reset stuff.
+        if (Input.GetKeyDown(KeyCode.Y)) { 
+            BiteZaDusto();
         }
 
 
@@ -90,6 +89,17 @@ public class PlayerControllerScript : MonoBehaviour
         
         //apply movement
         Move();
+    }
+
+    private void BiteZaDusto() {
+        Rigidbody2D yarnRB = this.yarn.GetComponent<Rigidbody2D>();
+        
+        this.plantManagerScript.BiteZaDusto();
+        
+        this.rb.position = this.lastStarSpot + new Vector3(1, this.future ? PlantManagerScript.FUTURE_OFFSET : 0, 0);
+        yarnRB.position = this.lastStarSpot + new Vector3(1 + this.yarnOffset, this.future ? PlantManagerScript.FUTURE_OFFSET : 0, 0);
+        yarnRB.velocity = Vector3.zero;
+        yarnRB.angularVelocity = 0;
     }
 
     void Move()
