@@ -7,10 +7,13 @@ using UnityEngine.Serialization;
 public class PlayerControllerScript : MonoBehaviour
 {
     public float vSpeed;
-    public int        direction;
-    public GameObject seedObj;
-    public bool       seedExists;
-    public float      offsetX;
+    public int direction;
+
+    [FormerlySerializedAs("seedObj")] public GameObject seed1Obj;
+    public GameObject seed2Obj;
+    public GameObject seed3Obj;
+    public bool seedExists;
+    public float offsetX;
     [FormerlySerializedAs("speed")] public float hSpeed;
     
     private float hMove;
@@ -43,14 +46,33 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector2 pos = this.gameObject.transform.position;
+        
+        if (!this.seedExists && !this.future) {
+            if (Input.GetKeyDown(KeyCode.Q)) {
+                //Debug.Log("pressed q");
+                Instantiate(this.seed1Obj, pos + new Vector2(this.direction * this.offsetX, .7f), Quaternion.identity);
+                this.seedExists = true;
+                this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
+                
+            } else if (Input.GetKeyDown(KeyCode.Z)) {
+                Instantiate(this.seed2Obj, pos + new Vector2(this.direction * this.offsetX, .7f), Quaternion.identity);
+                this.seedExists = true;
+                this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
+                
+            } else if (Input.GetKeyDown(KeyCode.X)) {
+                Instantiate(this.seed3Obj, pos + new Vector2(this.direction * this.offsetX, .7f), Quaternion.identity);
+                this.seedExists = true;
+                this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
+            }
+        }
+        
+        
         hMove = Input.GetAxis("Horizontal");
         movement = new Vector2(hMove, 0.0f) * this.hSpeed;
         if (this.hMove != 0)
             this.direction = Math.Sign(this.hMove);
-        
-        Vector2 pos = this.gameObject.transform.position;
-        
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             gigawatts = true;
@@ -67,14 +89,6 @@ public class PlayerControllerScript : MonoBehaviour
             this.movement.y = (this.grounded ? this.vSpeed : 0.0f);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && !this.seedExists) {
-            //Debug.Log("pressed q");
-            Instantiate(this.seedObj, pos + new Vector2(this.direction*this.offsetX, .7f), Quaternion.identity);
-            this.seedObj.GetComponent<SeedMovement>().direction = this.direction;
-            this.seedExists = true;
-            this.movement += new Vector2(this.hSpeed * -this.direction, 0);
-        }
-        
         //apply movement
         Move();
     }
@@ -92,7 +106,7 @@ public class PlayerControllerScript : MonoBehaviour
                     velocity.x += this.movement.x;
                 else
                     velocity.x = this.vSpeed * Math.Sign(this.movement.x);
-            if (Math.Abs(velocity.y) < this.vSpeed || Math.Sign(this.movement.y) != Math.Sign(velocity.y))
+            if (movement.y != 0 && (Math.Abs(velocity.y) < this.vSpeed || Math.Sign(this.movement.y) != Math.Sign(velocity.y)))
                 if (Math.Abs(attemptedY) < this.vSpeed)
                     velocity.y += this.movement.y;
                 else
