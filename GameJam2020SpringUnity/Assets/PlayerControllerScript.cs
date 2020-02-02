@@ -49,18 +49,18 @@ public class PlayerControllerScript : MonoBehaviour
         Vector2 pos = this.gameObject.transform.position;
         
         if (!this.seedExists && !this.future) {
-            if (Input.GetKeyDown(KeyCode.Q)) {
+            if (Input.GetKeyDown(KeyCode.R)) {
                 //Debug.Log("pressed q");
                 Instantiate(this.seed1Obj, pos + new Vector2(this.direction * this.offsetX, .7f), Quaternion.identity);
                 this.seedExists = true;
                 this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
                 
-            } else if (Input.GetKeyDown(KeyCode.Z)) {
+            } else if (Input.GetKeyDown(KeyCode.F)) {
                 Instantiate(this.seed2Obj, pos + new Vector2(this.direction * this.offsetX, .7f), Quaternion.identity);
                 this.seedExists = true;
                 this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
                 
-            } else if (Input.GetKeyDown(KeyCode.X)) {
+            } else if (Input.GetKeyDown(KeyCode.C)) {
                 Instantiate(this.seed3Obj, pos + new Vector2(this.direction * this.offsetX, .7f), Quaternion.identity);
                 this.seedExists = true;
                 this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
