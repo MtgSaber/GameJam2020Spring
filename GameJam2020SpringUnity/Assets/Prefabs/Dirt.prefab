@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7835656955292228601}
   - component: {fileID: 7835656955292228602}
   - component: {fileID: 7835656955292228607}
-  - component: {fileID: 7835656955292228600}
+  - component: {fileID: 115282623665289522}
   m_Layer: 0
   m_Name: Dirt
   m_TagString: Dirt
@@ -104,8 +104,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &7835656955292228600
-BoxCollider2D:
+--- !u!70 &115282623665289522
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,15 +118,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.1}
-    newSize: {x: 0.32, y: 0.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.1}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.3, y: 0.09}
+  m_Direction: 1
