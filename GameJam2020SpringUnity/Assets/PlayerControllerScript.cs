@@ -16,18 +16,20 @@ public class PlayerControllerScript : MonoBehaviour
     public bool seedExists;
     public float offsetX;
     [FormerlySerializedAs("speed")] public float hSpeed;
+    public int currentRoom;
+    public bool canMove;
     
     private float hMove;
     private Vector2 movement;
     private Vector2 jumpVector;
-    public bool canMove;
     private Rigidbody2D rb;
     private bool grounded;
     private FootCheckScript feet;
     private bool future;
     private bool canShift;
     private bool gigawatts;
-    public int currentRoom;
+    private PlantManagerScript plantManagerScript;
+    
 
     
     // Start is called before the first frame update
@@ -42,6 +44,7 @@ public class PlayerControllerScript : MonoBehaviour
         feet = this.gameObject.GetComponentInChildren<FootCheckScript>();
         this.seedExists = false;
         currentRoom = 0;
+        this.plantManagerScript = GameObject.Find("PlantManager").GetComponent<PlantManagerScript>();
     }
 
     // Update is called once per frame
@@ -51,7 +54,6 @@ public class PlayerControllerScript : MonoBehaviour
         
         if (!this.seedExists && !this.future) {
             if (Input.GetKeyDown(KeyCode.R)) {
-                //Debug.Log("pressed q");
                 Instantiate(this.seed1Obj, pos + new Vector2(this.direction * this.offsetX, .7f), Quaternion.identity);
                 this.seedExists = true;
                 this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
@@ -67,29 +69,24 @@ public class PlayerControllerScript : MonoBehaviour
                 this.rb.velocity += new Vector2(-2 * this.hSpeed * this.direction, .5f);
             }
         }
-        
-        
+
+        if (Input.GetKeyDown(KeyCode.Y)) {
+            this.plantManagerScript.BitesZaDusto();
+            // TODO: add more reset stuff.
+        }
+
+
         hMove = Input.GetAxis("Horizontal");
         movement = new Vector2(hMove, 0.0f) * this.hSpeed;
-        if (this.hMove != 0)
-            this.direction = Math.Sign(this.hMove);
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            gigawatts = true;
-        }
-        else
-        {
-            gigawatts = false;
-        }
-
+        if (this.hMove != 0) this.direction = Math.Sign(this.hMove);
+        
         //jumping control block
         grounded = feet.GetGrounded();
+        gigawatts = Input.GetKeyDown(KeyCode.E);
+        
         //Debug.Log(grounded);
-        if (Input.GetKey(KeyCode.Space)) {
-            this.movement.y = (this.grounded ? this.vSpeed : 0.0f);
-        }
-
+        if (Input.GetKey(KeyCode.Space)) this.movement.y = (this.grounded ? this.vSpeed : 0.0f);
+        
         //apply movement
         Move();
     }
@@ -121,11 +118,7 @@ public class PlayerControllerScript : MonoBehaviour
             }
         }
     }
-    void Jump()
-    {
-        jumpVector = new Vector2(0.0f, 100.0f);
-        rb.AddForce(jumpVector);
-    }
+    
     void QuantumLeap()
     {
         if (!future)
