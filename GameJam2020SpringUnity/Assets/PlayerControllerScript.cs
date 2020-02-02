@@ -7,6 +7,10 @@ using UnityEngine.Serialization;
 
     public class PlayerControllerScript : MonoBehaviour
     {
+
+        AudioSource[] beepAndBoop;
+        public AudioClip[] sounds;
+        public AudioClip[] songs;
         Animator anim;
         public float yarnOffset;
         public float vSpeed;
@@ -33,11 +37,17 @@ using UnityEngine.Serialization;
         private bool gigawatts;
         private PlantManagerScript plantManagerScript;
         private GameObject characterSprite;
+        int songNum;
 
 
         // Start is called before the first frame update
         void Start()
         {
+        System.Random r;
+        r = new System.Random();
+        songNum = r.Next(0, 2);
+        Debug.Log(songNum);
+            beepAndBoop = this.gameObject.GetComponents<AudioSource>();
             lastStarSpot = this.gameObject.transform.position;
             canMove = true;
             grounded = false;
@@ -51,7 +61,9 @@ using UnityEngine.Serialization;
             this.plantManagerScript = GameObject.Find("PlantManager").GetComponent<PlantManagerScript>();
             anim = this.gameObject.GetComponentInChildren<Animator>();
             characterSprite = GameObject.Find("Protaginist_Idle");
-        }
+        beepAndBoop[0].clip = songs[songNum];
+        beepAndBoop[0].Play();
+    }
 
         // Update is called once per frame
         void Update()
@@ -138,7 +150,9 @@ using UnityEngine.Serialization;
             yarnRB.position = this.lastStarSpot + new Vector3(1 + this.yarnOffset, this.future ? PlantManagerScript.FUTURE_OFFSET : 0, 0);
             yarnRB.velocity = Vector3.zero;
             yarnRB.angularVelocity = 0;
-        }
+            beepAndBoop[1].clip = sounds[0];
+            beepAndBoop[1].Play();
+    }
 
         void Move()
         {
@@ -170,6 +184,8 @@ using UnityEngine.Serialization;
 
         void QuantumLeap()
         {
+        beepAndBoop[1].clip = sounds[0];
+        beepAndBoop[1].Play();
             if (!future)
             {
                 this.gameObject.transform.Translate(0.0f, 16.6f, 0.0f);
@@ -219,4 +235,13 @@ using UnityEngine.Serialization;
                 Destroy(collision.gameObject);
             }
         }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!grounded&&collision.collider.tag == "Ground")
+        {
+            beepAndBoop[1].clip = sounds[1];
+            beepAndBoop[1].Play();
+        }
     }
+}

@@ -9939,6 +9939,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7047d33f72d6e724a8bc5c895fdc9dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: c6033059fb6e18c4788e9d75ad091840, type: 3}
+  - {fileID: 8300000, guid: 69f06c391ba0fda48b46350866a96bb2, type: 3}
+  - {fileID: 8300000, guid: e5531c6099f3e9549b7f5bf924795799, type: 3}
+  songs:
+  - {fileID: 8300000, guid: 547374bfdd020054e94fa196465749f7, type: 3}
+  - {fileID: 8300000, guid: 2c31dea7a307b6c4594bf327f0671047, type: 3}
   yarnOffset: 0
   vSpeed: 12
   direction: 0
@@ -10113,11 +10120,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 547374bfdd020054e94fa196465749f7, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
