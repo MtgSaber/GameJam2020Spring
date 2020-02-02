@@ -12,6 +12,7 @@ public class PlayerControllerScript : MonoBehaviour
     [FormerlySerializedAs("seedObj")] public GameObject seed1Obj;
     public GameObject seed2Obj;
     public GameObject seed3Obj;
+    public GameObject yarn;
     public bool seedExists;
     public float offsetX;
     [FormerlySerializedAs("speed")] public float hSpeed;
@@ -26,7 +27,7 @@ public class PlayerControllerScript : MonoBehaviour
     private bool future;
     private bool canShift;
     private bool gigawatts;
-    private int currentRoom;
+    public int currentRoom;
 
     
     // Start is called before the first frame update
@@ -129,12 +130,14 @@ public class PlayerControllerScript : MonoBehaviour
     {
         if (!future)
         {
-            this.gameObject.transform.Translate(0.0f, 20.0f, 0.0f);
+            this.gameObject.transform.Translate(0.0f, 16.6f, 0.0f);
+            yarn.transform.Translate(0.0f, 16.6f, 0.0f);
             future = true;
         }
         else
         {
-            this.gameObject.transform.Translate(0.0f, -20.0f, 0.0f);
+            this.gameObject.transform.Translate(0.0f, -16.6f, 0.0f);
+            yarn.transform.Translate(0.0f, -16.6f, 0.0f);
             future = false;
         }
     }
