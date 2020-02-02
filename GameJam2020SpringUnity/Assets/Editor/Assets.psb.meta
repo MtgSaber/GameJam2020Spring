@@ -42,7 +42,7 @@ ScriptedImporter:
     textureType: 8
     textureShape: 1
     singleChannelComponent: 0
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -84,7 +84,513 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-  mosaicSpriteImportData: []
+  mosaicSpriteImportData:
+  - name: Paper
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 792
+      y: 4
+      width: 195
+      height: 226
+    spriteID: cc7109152b1af1a4db2669911d6cb915
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 482, y: -10}
+  - name: Blank_Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 780
+      height: 270
+    spriteID: 23f65a0fc63e74e4db9847808775d5c9
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: Seam_Open
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 920
+      y: 397
+      width: 99
+      height: 149
+    spriteID: 57316c2d6b083ae4d950a28957572441
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 431, y: 311}
+  - name: Seam_Closed
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 838
+      width: 90
+      height: 156
+    spriteID: 25e0e182b211b934fa8acf3a41cd1baf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -97, y: 768}
+  - name: Plant2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 397
+      y: 838
+      width: 48
+      height: 175
+    spriteID: a40bbc50bd46b5447ac5a556f33ff9a4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 205, y: 799}
+  - name: Mushroom
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 247
+      y: 953
+      width: 40
+      height: 39
+    spriteID: 27710631a1614b54c83e73a47d478142
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -101, y: 879}
+  - name: Plant1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 919
+      y: 560
+      width: 81
+      height: 138
+    spriteID: 41f1fedadccc3df4c89cac15f08080ab
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 665, y: 520}
+  - name: Block1_B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 838
+      width: 143
+      height: 107
+    spriteID: c5228f59e47578c438d2031adb40006a
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -3, y: 838}
+  - name: Block2_B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 953
+      width: 84
+      height: 60
+    spriteID: 6447bc9a93484c4418e71866626940a5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -33, y: 891}
+  - name: Block3_B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 792
+      y: 238
+      width: 181
+      height: 35
+    spriteID: dc79ad771d18a654f8904e38f87b6985
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 630, y: 238}
+  - name: Block4_B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 453
+      y: 838
+      width: 98
+      height: 78
+    spriteID: aa3770442332fa34f9d04f8cb5b73645
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 100, y: 838}
+  - name: Block5_B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 792
+      y: 282
+      width: 163
+      height: 107
+    spriteID: e63886a6ceb507243961b7d7f8d1448d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 313, y: 282}
+  - name: Block6_B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 792
+      y: 397
+      width: 120
+      height: 138
+    spriteID: f109660dcfa0cdc4ca8cbcf1bea0defb
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 143, y: 397}
+  - name: Background_B
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 282
+      width: 780
+      height: 270
+    spriteID: 88b156ec72a66dc49bbf6b1cf21337a1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 282}
+  - name: Sappling
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1002
+      y: 238
+      width: 15
+      height: 16
+    spriteID: d533154b64d33df43bf830e9fc177afa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 723, y: 206}
+  - name: Seed
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 981
+      y: 238
+      width: 13
+      height: 20
+    spriteID: b085f853c642d674f99c043d729607aa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 676, y: 206}
+  - name: Block1_A
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 155
+      y: 838
+      width: 136
+      height: 107
+    spriteID: 7bb9c28d733662546abfbbaa73af1bf5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 148, y: 838}
+  - name: Block2_A
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 953
+      width: 84
+      height: 47
+    spriteID: 18b2304dce29df248be4ae29b178e239
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -184, y: 878}
+  - name: Block3_A
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 662
+      y: 838
+      width: 178
+      height: 35
+    spriteID: 9ecb66c9245d65c48a2481134cf3cd67
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 497, y: 838}
+  - name: Block4_A
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 559
+      y: 838
+      width: 95
+      height: 78
+    spriteID: 6b85cd45687d9bf40bc09751450cea74
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 206, y: 838}
+  - name: Block5_A
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 792
+      y: 706
+      width: 153
+      height: 107
+    spriteID: 1315ada5d58aa4147ae9ad6585375e32
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 308, y: 706}
+  - name: Block6_A
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 792
+      y: 560
+      width: 119
+      height: 138
+    spriteID: dda8506f9fb7fd14e8bba0e1936aed25
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 143, y: 560}
+  - name: Background_A
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 560
+      width: 780
+      height: 270
+    spriteID: 54c6fdd5b18edd84eac36b6ab7f5c13c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 560}
   rigSpriteImportData:
   - name: Paper
     originalName: 
@@ -609,7 +1115,182 @@ ScriptedImporter:
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 0
-  mosaicPSDLayers: []
+  mosaicPSDLayers:
+  - name: Paper
+    spriteName: Paper
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cc7109152b1af1a4db2669911d6cb915
+    layerID: 150
+    mosaicPosition: {x: 792, y: 4}
+  - name: Blank_Background
+    spriteName: Blank_Background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 23f65a0fc63e74e4db9847808775d5c9
+    layerID: 148
+    mosaicPosition: {x: 4, y: 4}
+  - name: Seam_Open
+    spriteName: Seam_Open
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 57316c2d6b083ae4d950a28957572441
+    layerID: 145
+    mosaicPosition: {x: 920, y: 397}
+  - name: Seam_Closed
+    spriteName: Seam_Closed
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 25e0e182b211b934fa8acf3a41cd1baf
+    layerID: 144
+    mosaicPosition: {x: 299, y: 838}
+  - name: Future
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 118
+    mosaicPosition: {x: 0, y: 0}
+  - name: Plant2
+    spriteName: Plant2
+    isGroup: 0
+    parentIndex: 4
+    spriteID: a40bbc50bd46b5447ac5a556f33ff9a4
+    layerID: 141
+    mosaicPosition: {x: 397, y: 838}
+  - name: Mushroom
+    spriteName: Mushroom
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 27710631a1614b54c83e73a47d478142
+    layerID: 140
+    mosaicPosition: {x: 247, y: 953}
+  - name: Plant1
+    spriteName: Plant1
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 41f1fedadccc3df4c89cac15f08080ab
+    layerID: 139
+    mosaicPosition: {x: 919, y: 560}
+  - name: Block1_B
+    spriteName: Block1_B
+    isGroup: 0
+    parentIndex: 4
+    spriteID: c5228f59e47578c438d2031adb40006a
+    layerID: 160
+    mosaicPosition: {x: 4, y: 838}
+  - name: Block2_B
+    spriteName: Block2_B
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 6447bc9a93484c4418e71866626940a5
+    layerID: 161
+    mosaicPosition: {x: 155, y: 953}
+  - name: Block3_B
+    spriteName: Block3_B
+    isGroup: 0
+    parentIndex: 4
+    spriteID: dc79ad771d18a654f8904e38f87b6985
+    layerID: 162
+    mosaicPosition: {x: 792, y: 238}
+  - name: Block4_B
+    spriteName: Block4_B
+    isGroup: 0
+    parentIndex: 4
+    spriteID: aa3770442332fa34f9d04f8cb5b73645
+    layerID: 163
+    mosaicPosition: {x: 453, y: 838}
+  - name: Block5_B
+    spriteName: Block5_B
+    isGroup: 0
+    parentIndex: 4
+    spriteID: e63886a6ceb507243961b7d7f8d1448d
+    layerID: 164
+    mosaicPosition: {x: 792, y: 282}
+  - name: Block6_B
+    spriteName: Block6_B
+    isGroup: 0
+    parentIndex: 4
+    spriteID: f109660dcfa0cdc4ca8cbcf1bea0defb
+    layerID: 165
+    mosaicPosition: {x: 792, y: 397}
+  - name: Background_B
+    spriteName: Background_B
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 88b156ec72a66dc49bbf6b1cf21337a1
+    layerID: 106
+    mosaicPosition: {x: 4, y: 282}
+  - name: Present
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 
+    layerID: 69
+    mosaicPosition: {x: 0, y: 0}
+  - name: Sappling
+    spriteName: Sappling
+    isGroup: 0
+    parentIndex: 15
+    spriteID: d533154b64d33df43bf830e9fc177afa
+    layerID: 147
+    mosaicPosition: {x: 1002, y: 238}
+  - name: Seed
+    spriteName: Seed
+    isGroup: 0
+    parentIndex: 15
+    spriteID: b085f853c642d674f99c043d729607aa
+    layerID: 146
+    mosaicPosition: {x: 981, y: 238}
+  - name: Block1_A
+    spriteName: Block1_A
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 7bb9c28d733662546abfbbaa73af1bf5
+    layerID: 152
+    mosaicPosition: {x: 155, y: 838}
+  - name: Block2_A
+    spriteName: Block2_A
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 18b2304dce29df248be4ae29b178e239
+    layerID: 153
+    mosaicPosition: {x: 4, y: 953}
+  - name: Block3_A
+    spriteName: Block3_A
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 9ecb66c9245d65c48a2481134cf3cd67
+    layerID: 154
+    mosaicPosition: {x: 662, y: 838}
+  - name: Block4_A
+    spriteName: Block4_A
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 6b85cd45687d9bf40bc09751450cea74
+    layerID: 155
+    mosaicPosition: {x: 559, y: 838}
+  - name: Block5_A
+    spriteName: Block5_A
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 1315ada5d58aa4147ae9ad6585375e32
+    layerID: 156
+    mosaicPosition: {x: 792, y: 706}
+  - name: Block6_A
+    spriteName: Block6_A
+    isGroup: 0
+    parentIndex: 15
+    spriteID: dda8506f9fb7fd14e8bba0e1936aed25
+    layerID: 157
+    mosaicPosition: {x: 792, y: 560}
+  - name: Background_A
+    spriteName: Background_A
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 54c6fdd5b18edd84eac36b6ab7f5c13c
+    layerID: 8
+    mosaicPosition: {x: 4, y: 560}
   rigPSDLayers:
   - name: Paper
     spriteName: Paper
