@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 public class PlayerControllerScript : MonoBehaviour
 {
+    Animator anim;
     public float vSpeed;
     public int direction;
     [FormerlySerializedAs("seedObj")] public GameObject seed1Obj;
@@ -29,7 +30,7 @@ public class PlayerControllerScript : MonoBehaviour
     private bool canShift;
     private bool gigawatts;
     private PlantManagerScript plantManagerScript;
-    
+    private GameObject characterSprite;
 
     
     // Start is called before the first frame update
@@ -46,11 +47,16 @@ public class PlayerControllerScript : MonoBehaviour
         this.seedExists = false;
         currentRoom = 0;
         this.plantManagerScript = GameObject.Find("PlantManager").GetComponent<PlantManagerScript>();
+        anim = this.gameObject.GetComponentInChildren<Animator>();
+        characterSprite = GameObject.Find("Protaginist_Idle");
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
+
         Vector2 pos = this.gameObject.transform.position;
         
         if (!this.seedExists && !this.future) {
@@ -90,6 +96,27 @@ public class PlayerControllerScript : MonoBehaviour
         
         //apply movement
         Move();
+
+        bool g = grounded;
+        bool v;
+        if (rb.velocity.magnitude > 0)
+        {
+            v = true;
+        }
+        else
+        {
+            v = false;
+        }
+        if (direction < 0)
+        {
+            characterSprite.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+        }else if (direction > 0)
+        {
+            characterSprite.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+        }
+        anim.SetBool("IsMoving", v);
+        anim.SetBool("isGrounded", g);
+
     }
 
     void Move()
